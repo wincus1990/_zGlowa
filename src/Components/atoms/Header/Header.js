@@ -28,6 +28,15 @@ const Header = styled.h1`
                 padding: 3.5% 0 3.5% 0;
             `
         }
+
+    ${({ tertiary }) => 
+            tertiary && css `
+                color: ${({ theme }) => theme.black }; 
+                font-size: ${({ theme }) => theme.fontSize.xs };
+                font-weight: ${({ theme }) => theme.bold };
+                text-align: left;
+            `
+        }
 `;
 
 export default Header;

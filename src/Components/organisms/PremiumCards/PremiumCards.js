@@ -12,6 +12,8 @@ export default function PremiumCards() {
             <PremiumCardsWrapper>
                 {Initial.map(item => (
                     <Card
+                        id = { item.id }
+                        key = { item.id }
                         minWidth = '290px'
                         margin = '10px'
                         img = { item.img } 

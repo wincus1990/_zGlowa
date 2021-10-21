@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import ButtonIcon from "Components/atoms/ButtonIcon/ButtonIcon";
 import logo_z_glowa from 'Assets/photos/logo_z_glowa_263x40.jpg';
-import usericon from 'Assets/icons/userIcon.svg';
 import { NavWrapper, Logo, Hamburger, Menu, MenuLink, } from './NavigationStyles';
+import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -18,7 +17,7 @@ const Navbar = () => {
             <span />
         </Hamburger>
         <Menu isOpen={ isOpen }>
-            <MenuLink href="">STRONA GŁÓWNA</MenuLink>
+            <MenuLink as = { NavLink } to="/">STRONA GŁÓWNA</MenuLink>
             <MenuLink href="">OGŁOSZENIA</MenuLink>
             <MenuLink href="">IDEA</MenuLink>
             <MenuLink href="">KONTAKT</MenuLink>

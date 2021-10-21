@@ -67,9 +67,8 @@ export const Bottom = styled.div`
         font-size: ${({ theme }) => theme.fontSize.xxxs };
         color: ${({ theme }) => theme.mainBlue };
 
-        a{
-            text-decoration: none;
-            color: ${({ theme }) => theme.mainBlue };
+        &:hover {
+            cursor: pointer;
         }
     }
 `

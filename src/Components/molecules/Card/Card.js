@@ -1,26 +1,46 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import RightArrow from 'Assets/photos/right-arrow.png'
+import RightArrow from 'Assets/photos/right-arrow.png';
+import { Redirect } from 'react-router-dom';
 import { CardWrapper, ItemName, ItemLocalization, ItemPrice, Bottom } from './Card.styles';
 
-const Card = ({img, name, localization, price, minWidth, margin }) => (
-    <CardWrapper style = {{minWidth: minWidth, margin: margin}}>
-        <img src = { img } alt = { img }></img>
-        <ItemName> { name.toUpperCase()  } </ItemName>
-        <ItemLocalization> { localization.toUpperCase() }</ItemLocalization>
-        <Bottom>
-            <ItemPrice> { price } PLN</ItemPrice>
-            <p><a href = '/#'>ZOBACZ WIĘCEJ</a></p>
-            <img src = { RightArrow } alt = { RightArrow }></img>
-        </Bottom>
-    </CardWrapper>
-)
+class Card extends React.Component {
+
+    state = {
+        redirect: false,
+    }
+
+    handleShowMoreClick = () => this.setState({ redirect: true })
+
+    render() {
+
+        const { id, img, name, localization, price, minWidth, margin } = this.props;
+
+        if (this.state.redirect) {
+            return <Redirect to = { `/${id}` } />
+        }
+
+        return (
+            <CardWrapper style = {{ minWidth: minWidth, margin: margin }}> 
+                <img src = { img } alt = { name }></img>
+                <ItemName> { name.toUpperCase()  } {id} {price}</ItemName>
+                <ItemLocalization> { localization.toUpperCase() }</ItemLocalization>
+                <Bottom>
+                    <ItemPrice> { price } PLN</ItemPrice>
+                    <p onClick = { this.handleShowMoreClick }>ZOBACZ WIĘCEJ</p>
+                    <img src = { RightArrow } alt = ''></img>
+                </Bottom>
+            </CardWrapper>
+        )
+    }
+}
+
 
 Card.propTypes = {
     img: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     localization: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     minWidth: PropTypes.string,
     margin: PropTypes.string,
 }
