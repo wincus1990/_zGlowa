@@ -5,13 +5,13 @@ const Header = styled.h1`
   font-weight: ${({ theme }) => theme.medium} ;
   text-align: center;
 
-    @media (max-width: 1080px) {
+    /* @media (max-width: 1080px) {
         font-size: ${({ theme }) => theme.fontSize.m };
     }
 
     @media (max-width: 768px) {
         font-size: ${({ theme }) => theme.fontSize.m };
-    }
+    } */
 
   ${({ primary }) => 
         primary && css `

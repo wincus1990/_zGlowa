@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     width: 100%;
-    height: 100vh;
     padding: 0;
     margin: 0;
 `
@@ -24,15 +23,15 @@ export const ItemDetailSidebar = styled.div`
 `
 
 export const ItemDetails = styled.div`
-    height: 40%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 `
 
 export const CategoriesWrapper = styled.div`
-    margin-top: 10%;
-    height: 50%;
+    margin-top: 5%;
+    height: 10%;
 
 `
 export const Categories = styled.div`
@@ -64,10 +63,12 @@ export const Images = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
     width: 100%;
+    margin-top: 2%;
 `
 
 export const ContactFormWrapper = styled.div`
-    /* background-color: pink; */
+    margin: 10vh 0;
+    width: 100%;
 `
 
 export const ItemImage = styled.div`

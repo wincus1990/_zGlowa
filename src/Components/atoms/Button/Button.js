@@ -7,7 +7,6 @@ const Button = styled.button`
     border: 0;
     width: 40%;
     height: 50px;
-    padding: 10px;
     align-items: center;
     text-align: center;
 
@@ -31,12 +30,11 @@ const Button = styled.button`
     
     ${({ big }) => 
         big && css `
+           
             font-size: ${({ theme }) => theme.fontSize.xs };
             color: ${({ theme }) => theme.white };;
             width: 35%;
-            height: 60px;
-            border: 0;
-            margin-bottom: 1.5%;
+            height: 80px;
 
             &:hover {
                 background-color: ${({ theme }) => theme.white };
@@ -52,6 +50,7 @@ const Button = styled.button`
             @media (max-width: 768px) {
                 width: 70%;
                 padding: 5% 7%;
+                height: 60px;
             }
         `
     }

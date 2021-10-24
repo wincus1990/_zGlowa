@@ -4,6 +4,7 @@ export const CardWrapper = styled.div`
     min-width: ${({ width }) => width };
     margin: ${({ margin }) => margin };
     background-color: ${({ theme })=> theme.white };
+    width: 330px;
     height: 378px;
     -webkit-box-shadow: 3px 3px 3px -2px rgba(196, 196, 196, 1);
     -moz-box-shadow: 3px 3px 3px -2px rgba(196, 196, 196, 1);

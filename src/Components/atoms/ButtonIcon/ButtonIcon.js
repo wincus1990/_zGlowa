@@ -16,7 +16,6 @@ const ButtonIcon = styled.button`
     }
     
     @media (max-width: 1080px) {
-        border: 0.5px solid lightgrey;
         padding: 1%;
 
         &:active {
