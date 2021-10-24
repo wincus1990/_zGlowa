@@ -18,7 +18,7 @@ export const PremiumCardsWrapper = styled.div`
     }
     ::-webkit-scrollbar-thumb {
         background-color: ${({ theme }) => theme.mainBlue };
-        border-radius: 20px;
         border: 1px solid ${({ theme }) => theme.mainBlue };
+        border-radius: 20px;
     }
 `

@@ -4,10 +4,29 @@ const Button = styled.button`
     background-color: ${({ theme }) => theme.mainBlue };
     color: ${({ big, theme }) => big ? theme.mainBlue : theme.white};
     transition: all 0.2s ease-in;
-    height: 30px;
+    border: 0;
+    width: 40%;
+    height: 50px;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
 
     &:hover {
         cursor: pointer;
+    }
+
+    ${({ category }) => 
+        category && css `
+            color: ${({ theme }) => theme.mainBlue }; 
+            background-color: ${({ theme }) => theme.white };
+            border: 1px solid ${({ theme }) => theme.mainBlue }; 
+            margin: 2% 2% 2% 0;
+
+            &:hover {
+                color: ${({ theme }) => theme.white }; 
+                background-color: ${({ theme }) => theme.mainBlue };
+            }
+        `
     }
     
     ${({ big }) => 

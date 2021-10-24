@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const Header = styled.h1`
   font-size: ${({ theme, big }) => (big ? theme.fontSize.xl : theme.fontSize.l )};
-  font-weight: ${({ theme }) => theme.bold} ;
+  font-weight: ${({ theme }) => theme.medium} ;
   text-align: center;
 
     @media (max-width: 1080px) {

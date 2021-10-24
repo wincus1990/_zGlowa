@@ -14,7 +14,7 @@ export default function PremiumCards() {
                     <Card
                         id = { item.id }
                         key = { item.id }
-                        minWidth = '290px'
+                        minWidth = '300px'
                         margin = '10px'
                         img = { item.img } 
                         name = { item.name } 

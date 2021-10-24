@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const Paragraph = styled.p `
-    font-size: ${({ theme }) => theme.fontSize.xxxs };
+    font-size: ${({ theme }) => theme.fontSize.xxs };
     font-weight: ${({ theme }) => theme.light };
     text-align: center;
     line-height: 25px;
@@ -34,6 +34,7 @@ const Paragraph = styled.p `
 
     ${({ description }) => 
         description && css `
+            font-size: ${({ theme }) => theme.fontSize.xxxs };
             text-align: left;
         `
     }

@@ -23,5 +23,6 @@ const ButtonIcon = styled.button`
             background-color: ${({ theme }) => theme.white };
         }
     }
+
 `
 export default ButtonIcon;

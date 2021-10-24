@@ -7,10 +7,9 @@ export const FooterWrapper = styled.footer`
     background-repeat: no-repeat;
     background-position: 50% 50%;
     width: 100%;
-    min-height: 25vh;
+    min-height: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    align-content: center;
 `

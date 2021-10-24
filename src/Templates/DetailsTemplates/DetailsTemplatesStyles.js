@@ -2,68 +2,83 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     width: 100%;
+    height: 100vh;
     padding: 0;
     margin: 0;
 `
 
 export const StyledWrapper = styled.div`
-    width: 90vw;
-    height: 100vh;
+    width: 80%;
+    height: 100%;
     margin: 0 auto;
-    /* background-color: lightgreen; */
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-items: stretch;
+    grid-gap: 5%;
+    padding: 1%;
 `
 
 export const ItemDetailSidebar = styled.div`
     /* background-color: red; */
-    width: 40%;
    
 `
 
 export const ItemDetails = styled.div`
-    background-color: white;
     height: 40%;
-    padding: 8%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 `
 
-export const Categories = styled.div`
-    height: 30%;
-    padding: 8%;
+export const CategoriesWrapper = styled.div`
+    margin-top: 10%;
+    height: 50%;
 
+`
+export const Categories = styled.div`
+    margin: 3% 0;
 `
 export const UserInfo = styled.div`
     display: flex;
+    align-items: center;
 `
 
 export const RightWrapper = styled.div`
-    background-color: white;
-    width: 60%;
+    /* background-color: green; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 `
 
 export const ItemGallery = styled.div`
-    background-color: green;
     background: center center;
-    justify-content: center;
     background-image: url(${({ image }) => image });
     background-repeat: no-repeat;
-    background-position: center center fixed;
     background-size: cover;
     width: 100%;
-    height: 700px;
-    padding: -80%;
+    height: 600px;
 `
 
-export const SimilarWrapper = styled.div`
-    /* background-color: blue; */
+export const Images = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    width: 100%;
 `
 
 export const ContactFormWrapper = styled.div`
     /* background-color: pink; */
 `
+
+export const ItemImage = styled.div`
+    background-image: url(${({ image }) => image });
+    background-size: cover;
+    background-position: center center;
+    width: 100%; 
+    height: 220px;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+    }
+`;

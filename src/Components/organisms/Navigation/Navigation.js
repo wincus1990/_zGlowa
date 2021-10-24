@@ -10,7 +10,7 @@ const Navbar = () => {
   
   return (
     <NavWrapper>
-        <Logo href="" icon = { logo_z_glowa }></Logo>
+        <Logo as = { NavLink } to='/' icon = { logo_z_glowa }></Logo>
         <Hamburger onClick={() => setIsOpen(!isOpen)}>
             <span />
             <span />

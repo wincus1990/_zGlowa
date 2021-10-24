@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const NavWrapper = styled.div`
   background: ${({ theme }) => theme.white };
   margin: 10px auto;
@@ -48,14 +47,12 @@ export const Logo = styled.a`
     width: 197px;
     height: 30px;
   }
-
 `;
 
 export const Menu = styled.div`
   display: flex;
   align-items: center;  
   
-
   @media (max-width: 1080px) {
     align-items: center;  
     overflow: hidden;
@@ -71,6 +68,7 @@ export const Hamburger = styled.div`
   flex-direction: column;
   cursor: pointer;
   flex-wrap: wrap;
+  
   span {
     height: 3px;
     width: 30px;

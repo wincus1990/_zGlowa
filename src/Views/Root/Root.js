@@ -16,7 +16,7 @@ const Root = () => {
           <Rooms />
             <Switch>
               <Route exact path = { Routes.main } component = { Main } /> 
-              <Route path = {'/:id'} component = { DetailsPage } />
+              <Route path = '/:id' component = { DetailsPage } />
             </Switch>
           <Footer />
           </BrowserRouter>

@@ -10,9 +10,9 @@ const Newsletter = () => (
         <img src = {Slogan} alt = 'Slogan'/>
             <InputWrapper>
                 <Input placeholder = 'Newsletter'/>
-                <Button>ZAPISZ SIĘ </Button>
+                <Button>ZAPISZ SIĘ</Button>
             </InputWrapper>
-            <Paragraph>Zapisz się do grona naszych przyjaciół, <br/> będziesz otrzymywać o nowych, interesujących Cię przedmiotach</Paragraph>
+            <Paragraph>Zapisz się do grona naszych przyjaciół, <br/> a będziesz otrzymywać informacje o nowych, interesujących Cię przedmiotach</Paragraph>
         </NewsletterWrapper>
 )
 

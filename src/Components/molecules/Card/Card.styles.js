@@ -21,10 +21,10 @@ export const CardWrapper = styled.div`
     img {
         background-repeat: no-repeat;
         background-size: cover; 
-        background-position: center;
+        background-position: center center;
         margin: 0 auto;
         width: 100%;
-        height: 60%;
+        height: 75%;
         background-color: white;
         outline: none;   
     }

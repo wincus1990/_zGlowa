@@ -17,13 +17,13 @@ class Card extends React.Component {
         const { id, img, name, localization, price, minWidth, margin } = this.props;
 
         if (this.state.redirect) {
-            return <Redirect to = { `/${id}` } />
+            return <Redirect to = { `items/${id}` } />
         }
 
         return (
             <CardWrapper style = {{ minWidth: minWidth, margin: margin }}> 
                 <img src = { img } alt = { name }></img>
-                <ItemName> { name.toUpperCase()  } {id} {price}</ItemName>
+                <ItemName> { name.toUpperCase() } </ItemName>
                 <ItemLocalization> { localization.toUpperCase() }</ItemLocalization>
                 <Bottom>
                     <ItemPrice> { price } PLN</ItemPrice>
