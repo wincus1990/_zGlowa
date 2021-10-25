@@ -8,11 +8,11 @@ const Paragraph = styled.p `
     
 
     @media (max-width: 1080px) {
-        font-size: ${({ theme }) => theme.fontSize.xs };
+        font-size: ${({ theme }) => theme.fontSize.xxxs };
     }
 
     @media (max-width: 768px) {
-        font-size: ${({ theme }) => theme.fontSize.xxs };
+        font-size: ${({ theme }) => theme.fontSize.xxxs };
     }
 
     ${({ big }) => 
@@ -34,7 +34,7 @@ const Paragraph = styled.p `
 
     ${({ description }) => 
         description && css `
-            font-size: ${({ theme }) => theme.fontSize.xxxs };
+            font-size: ${({ theme }) => theme.fontSize.xxs };
             text-align: left;
         `
     }

@@ -15,24 +15,35 @@ export const StyledWrapper = styled.div`
     justify-items: stretch;
     grid-gap: 5%;
     padding: 1%;
+
+    @media (max-width: 1080px) {
+        width: 100%;      
+        display: block; 
+        text-align: center;    
+    }
 `
 
 export const ItemDetailSidebar = styled.div`
-    /* background-color: red; */
-   
 `
 
 export const ItemDetails = styled.div`
-    height: 30%;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    @media (max-width: 1080px) {
+        align-items: center;  
+    }
 `
 
 export const CategoriesWrapper = styled.div`
     margin-top: 5%;
     height: 10%;
-
+    
+    @media (max-width: 1080px) {    
+        display: none;     
+    }
 `
 export const Categories = styled.div`
     margin: 3% 0;
@@ -43,7 +54,6 @@ export const UserInfo = styled.div`
 `
 
 export const RightWrapper = styled.div`
-    /* background-color: green; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -64,6 +74,10 @@ export const Images = styled.div`
     grid-gap: 10px;
     width: 100%;
     margin-top: 2%;
+
+    @media (max-width: 1080px) {   
+        grid-template-columns: 1fr 1fr ;  
+    }
 `
 
 export const ContactFormWrapper = styled.div`

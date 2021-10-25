@@ -19,6 +19,10 @@ export const SectionWrapper = styled.section`
     text-align: center;
     align-content: center;
     margin: 4% 0 4% 0;
+
+    @media (max-width: 1080px) {   
+        background-position: 10% 10%;;  
+    }
 `
 
 export const ParagraphWrapper = styled.div`
@@ -26,4 +30,8 @@ export const ParagraphWrapper = styled.div`
     margin: 0 auto;
     color: white;
     font-size: ${({ theme }) => theme.fontSize.xxxs };
+
+    @media (max-width: 1080px) {   
+        width: 80%;  
+    }
 `

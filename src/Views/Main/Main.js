@@ -17,7 +17,7 @@ const Main = () => (
             <SectionWrapper blue img = { Quotes }>
                 <ParagraphWrapper>
                     <Paragraph>
-                        Każdy z nas ma niepotrzebne rzeczy w szafie, garażu, piwnicy i nie wie, co można z nimi zrobić. Wiedza, gdzie wyrzucić i czy w ogóle można, też bywa tajemnaSerdecznie zapraszamy do zapozniania się z projektemz _zGłową, który może Ci pomóc pozbyć się niepotrzebnych rzeczy.
+                        Każdy z nas ma niepotrzebne rzeczy w szafie, garażu, piwnicy i nie wie, co można z nimi zrobić. Wiedza, gdzie wyrzucić i czy w ogóle można, też bywa tajemna. Serdecznie zapraszamy do zapozniania się z projektemz _zGłową, który może Ci pomóc pozbyć się niepotrzebnych rzeczy.
                     </Paragraph>
                 </ParagraphWrapper>
             </SectionWrapper>

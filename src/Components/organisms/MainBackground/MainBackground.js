@@ -10,9 +10,9 @@ const MainBackground = (props) => (
             <ContentContainer>
                 
                 <Header primary big>Witaj w serwisie zGłową</Header>
-                <Paragraph medium>Wybierz pomiesczenie z którego chcesz się pozbyć przedmiotu oraz wpisz jego nazwę</Paragraph>
+                <Paragraph medium>Wpisz nazwę przedmiotu którego szukasz</Paragraph>
                 <InputHandler>
-                    <Input mainBackground placeholder ='wpisz nazwę przedmiotu'/>    
+                    <Input mainBackground placeholder =''/>    
                 </InputHandler>
             </ContentContainer>
         </BackgroundImage>

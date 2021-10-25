@@ -12,29 +12,24 @@ const ContactForm = () => (
         <StyledDataWrapper>
             <form>
                 <div>
-                    <label>Imię:</label>
-                    <label>Nazwisko:</label>
+                    <label>Name</label>
+                    <Input contact type = 'text' name = 'Imie'/>
                 </div>
                 <div>
-                    <Input contact type = 'text' />
-                    <Input contact type = 'text'/>
+                    <label>Nazwisko</label>
+                    <Input contact type = 'text' name = 'Nazwisko'/>
                 </div>
                 <div>
-                    <label>Telefon:</label>
-                    <label>Emial:</label>
+                    <label>Telefon</label>
+                    <Input contact type = 'text' name = 'Telefon'/>
                 </div>
                 <div>
-                    <Input contact type = 'text' />
-                    <Input contact type = 'text'/>
+                    <label>Emial</label>
+                    <Input contact type = 'text' name = 'Email'/>
                 </div>
-                <div>
-                  
-                    <label>Treść:</label>
-                </div>
-                <div>
-                    <textarea></textarea>
-                </div>
-                <Button>Wyślij wiadomość</Button>
+                    <label>Treść</label>
+                    <textarea/>
+                <Button secondary>WYślij wiadomość</Button>
             </form>
         </StyledDataWrapper>
     </StyledFormWrapper>

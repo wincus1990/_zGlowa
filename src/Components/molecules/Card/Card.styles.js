@@ -17,6 +17,8 @@ export const CardWrapper = styled.div`
 
     @media (max-width: 768px) {
         margin-bottom: 2%;
+        width: 100%;
+        height: 378px;
     }
  
     img {

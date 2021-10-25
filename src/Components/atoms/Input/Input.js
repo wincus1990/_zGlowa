@@ -6,7 +6,7 @@ const Input = styled.input`
     font-weight: ${({ theme }) => theme.light };
     background-color: ${({ theme }) => theme.lightGrey };
     border: none;
-    text-align: center;
+    text-align: left;
 
         ::placeholder {
             color: ${({ theme }) => theme.grey300};
@@ -28,12 +28,12 @@ const Input = styled.input`
 
     ${({ contact }) => 
             contact && css `
-                color: ${({ theme }) => theme.white };
+                color: ${({ theme }) => theme.black };
+                text-align: left;
                 font-size: ${({ theme }) => theme.fontSize.xxxs};
-                width: 49%;
-                padding: 5px;
-                margin: 5px 0.5%;
-                border-color: red;
+                width: 90%;
+                height: 30px;
+                padding: 15px 0;
             `
         }
     `; 
