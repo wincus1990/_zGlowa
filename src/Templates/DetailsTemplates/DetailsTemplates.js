@@ -6,11 +6,13 @@ import ButtonIcon from 'Components/atoms/ButtonIcon/ButtonIcon';
 import UserIcon from 'Assets/icons/userIcon.svg';
 import Stars from 'Assets/photos/stars.png';
 import ContactForm from 'Components/organisms/ContactForm/ContactForm';
+import { MenuLink } from 'Components/atoms/MenuLink/MenuLink.js';
 import { useLocation } from 'react-router-dom';
 import { Initial } from 'Assets/Initial/Initial.js'
+import { NavLink } from 'react-router-dom';
 import { StyledWrapper, Wrapper, ItemDetailSidebar, ItemGallery, RightWrapper, Images, ContactFormWrapper, ItemDetails, CategoriesWrapper, Categories, UserInfo, ItemImage } from './DetailsTemplatesStyles';
 
-function DetailTemplates({ match }) {
+function DetailsTemplates({ match }) {
     
     const location = useLocation();
     const getNumber = /\d+/g;
@@ -43,11 +45,11 @@ function DetailTemplates({ match }) {
                     <CategoriesWrapper>
                         <Header tertiary> KATEGORIA </Header>
                             <Categories>
-                                <Button category>{ Initial[pathname].category.toUpperCase() }</Button>
+                                <Button category><MenuLink as = { NavLink } to = {`/ogloszenia/${Initial[pathname].category}`}>{ Initial[pathname].category.toUpperCase() }</MenuLink></Button>
                             </Categories>
                             <Header tertiary> POZOSTAŁE </Header>
                         <Categories>
-                            {Array.from(Cat).map(item => ( item !== Initial[pathname].category ?  <Button category>{item}</Button> : null ))}
+                            { Array.from(Cat).map(item => ( item !== Initial[pathname].category ?  <Button category><MenuLink as = { NavLink } to = {`/ogloszenia/${item}`}>{ item }</MenuLink></Button> : null ))}
                         </Categories>
                     </CategoriesWrapper>
                 </ItemDetailSidebar>
@@ -55,7 +57,7 @@ function DetailTemplates({ match }) {
                     <ItemGallery image = { MainImage } alt = ''></ItemGallery>
                         <Images>
                             {Initial[pathname].images.map(item => 
-                                <ItemImage onClick={() => { setMainImage(item)} } image = {item} key = { Initial[pathname].id }/> )}
+                                <ItemImage onClick={() => { setMainImage(item)} } image = { item } key = { Initial[pathname].id }/> )}
                         </Images>
                     <ContactFormWrapper>
                         <ContactForm />
@@ -66,7 +68,7 @@ function DetailTemplates({ match }) {
     )
   }
 
-export default DetailTemplates;
+export default DetailsTemplates;
 
 // name = {Initial[pathname].name}
 // img = {Initial[pathname].img}

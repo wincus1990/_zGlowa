@@ -17,7 +17,7 @@ class Card extends React.Component {
         const { id, img, name, localization, price, minWidth, margin } = this.props;
 
         if (this.state.redirect) {
-            return <Redirect to = { `items/${id}` } />
+            return <Redirect to = { `/items/${id}` } />
         }
 
         return (

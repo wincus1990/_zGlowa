@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from 'Components/atoms/Input/Input.js';
 import Header from 'Components/atoms/Header/Header.js';
-import { StyledFormWrapper, StyledHeaderWrapper, StyledDataWrapper, StyledTextAreaWrapper } from './ContactFromStyles';
+import { StyledFormWrapper, StyledHeaderWrapper, StyledDataWrapper } from './ContactFromStyles';
 import Button from 'Components/atoms/Button/Button';
 
 const ContactForm = () => (

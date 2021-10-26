@@ -34,7 +34,7 @@ const Paragraph = styled.p `
 
     ${({ description }) => 
         description && css `
-            font-size: ${({ theme }) => theme.fontSize.xxs };
+            font-size: ${({ theme }) => theme.fontSize.xxxs };
             text-align: left;
         `
     }

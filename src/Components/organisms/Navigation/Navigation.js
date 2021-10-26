@@ -18,7 +18,7 @@ const Navbar = () => {
         </Hamburger>
         <Menu isOpen={ isOpen }>
             <MenuLink as = { NavLink } to="/">STRONA GŁÓWNA</MenuLink>
-            <MenuLink href="">OGŁOSZENIA</MenuLink>
+            <MenuLink as = { NavLink } to="/ogloszenia">OGŁOSZENIA</MenuLink>
             <MenuLink href="">IDEA</MenuLink>
             <MenuLink href="">KONTAKT</MenuLink>
             <MenuLink href="">LOGOWANIE</MenuLink>

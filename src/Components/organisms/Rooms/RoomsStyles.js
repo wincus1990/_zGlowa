@@ -12,7 +12,6 @@ export const StyledRoomsWrapper = styled.div`
   justify-content: space-around;
 
   span {
-      color: ${({ theme }) => theme.white };
       display: inline-block;
       transform: translateX(40px);
       white-space: nowrap;
@@ -21,4 +20,5 @@ export const StyledRoomsWrapper = styled.div`
         display: none;
     }
   }
+
 `
