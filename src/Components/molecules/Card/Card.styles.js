@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CardWrapper = styled.div`
     min-width: ${({ width }) => width };
     margin: ${({ margin }) => margin };
-    background-color: ${({ theme })=> theme.white };
+    background-color: ${({ theme }) => theme.white };
     width: 330px;
     height: 378px;
     -webkit-box-shadow: 3px 3px 3px -2px rgba(196, 196, 196, 1);
@@ -14,6 +14,14 @@ export const CardWrapper = styled.div`
     align-items: left;
     justify-content: space-between;
     padding: 15px;
+    border-radius: 5px;
+    transition-duration: 250ms;
+
+    &:hover{
+        -webkit-box-shadow: 1px 0px 8px -1px rgba(23, 23, 29, 1);
+        -moz-box-shadow: 1px 0px 8px -1px rgba(23, 23, 29, 1);
+        box-shadow: 1px 0px 8px -1px rgba(23, 23, 29, 1);
+    }
 
     @media (max-width: 768px) {
         margin-bottom: 2%;
@@ -30,6 +38,8 @@ export const CardWrapper = styled.div`
         height: 75%;
         background-color: white;
         outline: none;   
+        object-fit: cover;
+        margin-bottom: 15px;
     }
 `
 export const ItemName = styled.p`
@@ -45,6 +55,7 @@ export const ItemName = styled.p`
 
 export const ItemLocalization = styled.p`
     font-size: ${({ theme }) => theme.fontSize.xxxs };
+    padding: 5% 0;
 `
 
 export const ItemPrice = styled.p`

@@ -3,5 +3,7 @@ export const Routes = {
     items: '/items',
     item: '/items/:id',
     announcements: '/ogloszenia/',
-    category: '/ogloszenia/:category'
+    category: '/ogloszenia/:category',
+    user_name: '/user_name/:user_name',
+    logged: '/user_name/:user_name/:user_name'
 }

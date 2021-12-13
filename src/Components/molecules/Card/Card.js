@@ -1,40 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import RightArrow from 'Assets/photos/right-arrow.png';
 import { Redirect } from 'react-router-dom';
 import { CardWrapper, ItemName, ItemLocalization, ItemPrice, Bottom } from './Card.styles';
 
-class Card extends React.Component {
+function Card(props){
 
-    state = {
-        redirect: false,
+    const [ redirect, getRedirect ] = useState(false)
+    const { id, img, name, localization, price, minWidth, margin } = props;
+
+    const handleShowMoreClick = function(){
+        getRedirect(true);
     }
 
-    handleShowMoreClick = () => this.setState({ redirect: true })
-
-    render() {
-
-        const { id, img, name, localization, price, minWidth, margin } = this.props;
-
-        if (this.state.redirect) {
-            return <Redirect to = { `/items/${id}` } />
-        }
-
-        return (
-            <CardWrapper style = {{ minWidth: minWidth, margin: margin }}> 
-                <img src = { img } alt = { name }></img>
-                <ItemName> { name.toUpperCase() } </ItemName>
-                <ItemLocalization> { localization.toUpperCase() }</ItemLocalization>
-                <Bottom>
-                    <ItemPrice> { price } PLN</ItemPrice>
-                    <p onClick = { this.handleShowMoreClick }>ZOBACZ WIĘCEJ</p>
-                    <img src = { RightArrow } alt = ''></img>
-                </Bottom>
-            </CardWrapper>
-        )
+    if (redirect) {
+        return <Redirect to = { `/items/${id}` } />
     }
+
+    return(
+        <CardWrapper style = {{ minWidth: minWidth, margin: margin }}> 
+            <img src = { img } alt = { name }></img>
+            <ItemName> { name.toUpperCase() } </ItemName>
+            <ItemLocalization> { localization.toUpperCase() }</ItemLocalization>
+            <Bottom>
+                <ItemPrice> { price } PLN</ItemPrice>
+                <p onClick = { handleShowMoreClick }>ZOBACZ WIĘCEJ</p>
+                <img src = { RightArrow } alt = ''></img>
+            </Bottom>
+        </CardWrapper>
+    )
 }
-
 
 Card.propTypes = {
     img: PropTypes.string.isRequired,

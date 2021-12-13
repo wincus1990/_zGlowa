@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const ModalWrapper = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: bottom;
+  transform: translateY(-1%);
+  z-index: 999;
+`
+
 export const NavWrapper = styled.div`
   background: ${({ theme }) => theme.white };
   margin: 10px auto;
@@ -51,7 +60,8 @@ export const Logo = styled.a`
 
 export const Menu = styled.div`
   display: flex;
-  align-items: center;  
+  align-items: center;
+
   
   @media (max-width: 1080px) {
     align-items: center;  
@@ -60,6 +70,12 @@ export const Menu = styled.div`
     max-height: ${({ isOpen }) => (isOpen ? "400px" : "0")};
     transition: 0.3s ease-in;
     width: 100%;
+  }
+
+  img{
+    background-position: center center;
+    transform: translateX(50%);
+    float: right;
   }
 `;
 

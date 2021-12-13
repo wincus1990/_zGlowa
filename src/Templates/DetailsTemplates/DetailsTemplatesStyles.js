@@ -97,3 +97,4 @@ export const ItemImage = styled.div`
         opacity: 0.9;
     }
 `;
+

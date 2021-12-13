@@ -12,7 +12,7 @@ const ContactForm = () => (
         <StyledDataWrapper>
             <form>
                 <div>
-                    <label>Name</label>
+                    <label>Imię</label>
                     <Input contact type = 'text' name = 'Imie'/>
                 </div>
                 <div>
@@ -29,7 +29,7 @@ const ContactForm = () => (
                 </div>
                     <label>Treść</label>
                     <textarea/>
-                <Button secondary>WYślij wiadomość</Button>
+                <Button secondary>Wyślij wiadomość</Button>
             </form>
         </StyledDataWrapper>
     </StyledFormWrapper>

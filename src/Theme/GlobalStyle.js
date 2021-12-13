@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;600;&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Mulish:ital,wght@0,200;0,300;0,500;0,600;0,800;1,200;1,500;1,800&display=swap');
 
     *, *::before, *::after {
         box-sizing: border-box;
@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-size: 1.6rem;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Mulish', sans-serif;
     }
 
 `

@@ -1,51 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import Paragraph from "Components/atoms/Paragraph/Paragraph";
 import ButtonIcon from 'Components/atoms/ButtonIcon/ButtonIcon.js';
+import Button from "Components/atoms/Button/Button";
 import UserIcon from 'Assets/icons/userIcon.svg';
 import Stars from 'Assets/photos/stars.png';
+import { useDispatch } from 'react-redux';
+import { removeItem } from 'store/index.js';
 import { Redirect } from 'react-router-dom';
 import { CardWrapper, InformationWrapper, ItemName, ItemLocalization, ItemPrice } from './ResultCard.styles';
 
-class ResultCard extends React.Component {
+function ResultCard(props) {
 
-    state = {
-        redirect: false,
+    const dispatch = useDispatch();
+    const [ redirectToResultTemplate, getRedirectToResultTemplate ] = useState(false)
+    const [ redirectToUserProfileTemplate, getRedirectToUserProfileTemplate ] = useState(false)
+    const { id, img, name, description, user_name, localization, price, minWidth, margin, logged } = props;
+
+    const handleShowMoreClick = () => {
+        getRedirectToResultTemplate(true)
+    }
+    const handleShowUserProfile = () => {
+        getRedirectToUserProfileTemplate(true)
+    }
+    
+    const handleRemoveItem = () => {
+        dispatch(removeItem({ id: id }))
+    }
+    
+    if (redirectToResultTemplate) {
+        return <Redirect to = { `/items/${id}` } />
+    } else if (redirectToUserProfileTemplate) {
+        return <Redirect to = { `/user_name/${user_name}` } />
     }
 
-    handleShowMoreClick = () => this.setState({ redirect: true })
-
-    render() {
-
-        const { id, img, name, description, user_name, localization, price, minWidth, margin } = this.props;
-
-        if (this.state.redirect) {
-            return <Redirect to = { `/items/${id}` } />
-        }
-
-        return (
-            <CardWrapper style = {{ minWidth: minWidth, margin: margin }}> 
-                <img src = { img } alt = { name }></img>
-                <InformationWrapper>
-                    <ItemName onClick = { this.handleShowMoreClick }> { name } </ItemName>
-                    <li>
-                        <span>
-                            <Paragraph description>{ description }</Paragraph>
-                        </span>
-                    </li>
-                    <div>
+    return (
+        <CardWrapper style = {{ minWidth: minWidth, margin: margin }}> 
+            <img src = { img } alt = { name }></img>
+            <InformationWrapper>
+                <ItemName onClick = { handleShowMoreClick }> { name.toUpperCase() } </ItemName>
+                <span>
+                    <Paragraph description>{ description }</Paragraph>
+                </span>
+                <div onClick = { handleShowUserProfile }>
+                    {logged ? <>
+                        <Button userCard onClick = { handleRemoveItem }>USUŃ</Button>
+                        <Button userCard>ARCHIWUM</Button>
+                    </> :
+                    <>
                         <ButtonIcon icon = { UserIcon }/>
                         <Paragraph description>{ user_name }</Paragraph>
                         <ButtonIcon icon = { Stars }/>
-                    </div>
-                    <ItemLocalization> { localization }</ItemLocalization>
-                    <ItemPrice> { price } PLN</ItemPrice>
-                </InformationWrapper>
-            </CardWrapper>
-        )
-    }
+                    </>
+                    }
+                </div>
+                <ItemLocalization> { localization }</ItemLocalization>
+                <ItemPrice> { price } PLN</ItemPrice>
+            </InformationWrapper>
+        </CardWrapper>
+    )
 }
-
 
 ResultCard.propTypes = {
     img: PropTypes.string.isRequired,
@@ -68,3 +82,31 @@ ResultCard.defaultProps = {
 };
 
 export default ResultCard;
+
+
+// function Card(props){
+
+//     const [ redirect, getRedirect ] = useState(false)
+//     const { id, img, name, localization, price, minWidth, margin } = props;
+
+//     const handleShowMoreClick = function(){
+//         getRedirect(true);
+//     }
+
+//     if (redirect) {
+//         return <Redirect to = { `/items/${id}` } />
+//     }
+
+//     return(
+//         <CardWrapper style = {{ minWidth: minWidth, margin: margin }}> 
+//             <img src = { img } alt = { name }></img>
+//             <ItemName> { name.toUpperCase() } </ItemName>
+//             <ItemLocalization> { localization.toUpperCase() }</ItemLocalization>
+//             <Bottom>
+//                 <ItemPrice> { price } PLN</ItemPrice>
+//                 <p onClick = { handleShowMoreClick }>ZOBACZ WIĘCEJ</p>
+//                 <img src = { RightArrow } alt = ''></img>
+//             </Bottom>
+//     </CardWrapper>
+//     )
+// }

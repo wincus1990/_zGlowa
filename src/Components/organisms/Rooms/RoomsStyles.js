@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledRoomsWrapper = styled.div`
   background-color: ${({ theme }) => theme.mainBlue }; 
+  color: white;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -10,8 +11,11 @@ export const StyledRoomsWrapper = styled.div`
   align-items: center;
   text-align: center;
   justify-content: space-around;
+  position: relative;
+  z-index: 1;
 
   span {
+    color: white;
       display: inline-block;
       transform: translateX(40px);
       white-space: nowrap;
@@ -20,5 +24,4 @@ export const StyledRoomsWrapper = styled.div`
         display: none;
     }
   }
-
 `
