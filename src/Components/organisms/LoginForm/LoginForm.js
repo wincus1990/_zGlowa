@@ -5,7 +5,9 @@ import Header from 'Components/atoms/Header/Header.js';
 import { Link } from 'react-router-dom';
 import { StyledFormWrapper, StyledHeaderWrapper, StyledDataWrapper, RecoveryWrapper } from './LoginForm.styles';
 
-function LoginForm(){
+function LoginForm(props){
+
+    const { closeModal } = props;
 
     const [ formType, setFormType ] = useState('Login') 
     const [ logged, setLogged ] = useState('')
@@ -40,7 +42,7 @@ function LoginForm(){
                         <>
                             <div>
                                 <label>Podaj login</label>
-                                <Input contact type = 'text' name = 'Login' onChange = {(e) => setLogged(e.target.value)} />
+                                <Input contact type = 'text' name = 'Login' onChange = {(e) => setLogged(e.target.value)} required />
                             </div>
                             <div>
                                 <label>Podaj hasło</label>
@@ -51,7 +53,7 @@ function LoginForm(){
                                 <label>Zapamiętaj mnie</label>
                             </span>
                                 <Link to = { `/user_name/${logged}/${logged}` }>
-                                    <Button>ZALOGUJ SIĘ</Button>
+                                    <Button onClick = { closeModal }>ZALOGUJ SIĘ</Button>
                                 </Link>
                             <div>
                                 <span onClick = { forgotPassword }>Zapomaniałeś hasła?</span>

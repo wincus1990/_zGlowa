@@ -17,6 +17,11 @@ const Navigation = () => {
 
   const openModal = () => {
       setToggleModal(true)
+      setIsOpen(false)
+  }
+
+  const closeResponsiveNavigation = () => {
+    setIsOpen(!isOpen)
   }
 
   return (
@@ -29,15 +34,15 @@ const Navigation = () => {
                 <span />
             </Hamburger>
             <Menu isOpen={ isOpen }>
-                <MenuLink as = { NavLink } to="/">STRONA GŁÓWNA</MenuLink>
-                <MenuLink as = { NavLink } to="/ogloszenia/">OGŁOSZENIA</MenuLink>
-                <MenuLink href="https://www.zglowa.com/" target = '_blank' >IDEA</MenuLink>
-                <MenuLink href="">KONTAKT</MenuLink>
+                <MenuLink onClick = { closeResponsiveNavigation } as = { NavLink } to="/">STRONA GŁÓWNA</MenuLink>
+                <MenuLink onClick = { closeResponsiveNavigation } as = { NavLink } to="/ogloszenia/">OGŁOSZENIA</MenuLink>
+                <MenuLink href = "https://www.zglowa.com/" target = '_blank' >IDEA</MenuLink>
+                <MenuLink href = "">KONTAKT</MenuLink>
                 <MenuLink onClick = { openModal }>LOGOWANIE<img src = { UserIcon }  alt = ''/></MenuLink>
             </Menu>
         </NavWrapper>
         <ModalWrapper>
-          { isModalOpen && <Modal login closeModal = { closeModal }> <LoginForm /></Modal> }
+          { isModalOpen && <Modal login closeModal = { closeModal }> <LoginForm closeModal = { closeModal }/></Modal> }
         </ModalWrapper>
       </>
   );

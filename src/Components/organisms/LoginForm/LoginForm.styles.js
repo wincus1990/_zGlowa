@@ -11,6 +11,11 @@ export const StyledFormWrapper = styled.div`
     h3{
         padding: -10;
     }
+
+    @media (max-width: 1080px) {
+        width: 80%;
+        min-height: 320px;
+    }
 `
 export const StyledHeaderWrapper = styled.div`
    margin-bottom: 5%;

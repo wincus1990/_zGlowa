@@ -25,7 +25,7 @@ const Button = styled(({ children, openModal, ...props }) => (
 
     ${({ category }) => 
         category && css`
-            color: ${({ theme }) => theme.mainBlue }; 
+            color: ${({ theme }) => theme.black }; 
             background-color: ${({ theme }) => theme.white };
             border: 1px solid ${({ theme }) => theme.mainBlue }; 
             margin: 2% 2% 2% 0;
@@ -39,12 +39,16 @@ const Button = styled(({ children, openModal, ...props }) => (
 
     ${({ userCard }) => 
         userCard && css`
-            color: ${({ theme }) => theme.mainblue }; 
+            color: ${({ theme }) => theme.white }; 
             border: 1px solid ${({ theme }) => theme.mainBlue }; 
             border-radius: 5px;
             margin: 2% 2% 2% 0;
             width: 30%;
             height: 80%;
+
+            @media (max-width: 768px) {
+                width: 50%;     
+                }
             }
         `
     }

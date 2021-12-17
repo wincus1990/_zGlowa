@@ -32,6 +32,18 @@ const Input = styled.input`
             padding: 15px 0;
         `
     }
+
+    ${({ addItem }) => 
+        addItem && css`
+            font-size: ${({ theme }) => theme.fontSize.xxxs };
+            border: 1px solid ${({ theme }) => theme.lightGrey };
+            background-color: 1px solid ${({ theme }) => theme.white };
+            width: 100%;
+            height: 30px;
+            padding: 15px 0;
+            border-radius: 5px;
+        `
+    }
 `; 
 
 export default Input;

@@ -7,7 +7,7 @@ export const CardWrapper = styled.div`
     margin: ${({ margin }) => margin };
     background-color: ${({ theme })=> theme.white };
     transition-duration: 250ms;
-    width: 100%;
+    width: 130%;
     height: 250px;
     -webkit-box-shadow: 3px 3px 3px -2px rgba(196, 196, 196, 1);
     -moz-box-shadow: 3px 3px 3px -2px rgba(196, 196, 196, 1);
@@ -62,6 +62,12 @@ export const InformationWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: left;
+            
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: start;        
+        }
 
         &:hover{
             cursor: pointer;

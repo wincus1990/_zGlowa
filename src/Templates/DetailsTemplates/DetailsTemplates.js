@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from 'Components/atoms/Header/Header';
 import Paragraph from 'Components/atoms/Paragraph/Paragraph';
 import Button from 'Components/atoms/Button/Button';
@@ -9,7 +9,7 @@ import ContactForm from 'Components/organisms/ContactForm/ContactForm';
 import { useSelector } from 'react-redux';
 import { MenuLink } from 'Components/atoms/MenuLink/MenuLink.js';
 import { useLocation } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { StyledWrapper, Wrapper, ItemDetailSidebar, ItemGallery, RightWrapper, Images, ContactFormWrapper, ItemDetails, CategoriesWrapper, Categories, UserInfo, ItemImage } from './DetailsTemplatesStyles';
 
 function DetailsTemplates({ match }) {
@@ -22,13 +22,6 @@ function DetailsTemplates({ match }) {
     const pathname = location.pathname.match(getNumber)[0];
     const Cat = new Set(items.map(item => item.category));
     const [ MainImage, setMainImage ] = useState(items[pathname].img);
-
-    useEffect(() => {
-        window.scrollTo({
-            top: 80,
-            behavior: "smooth"
-        });
-    });
 
     const scrollToContactForm = function() {
         window.scrollTo({
@@ -59,7 +52,7 @@ function DetailsTemplates({ match }) {
                             </Categories>
                             <Header tertiary> POZOSTAŁE </Header>
                         <Categories>
-                            { Array.from(Cat).map(item => ( item !== items[pathname].category ?  <Button category><MenuLink as = { NavLink } to = {`/ogloszenia/${item}`}>{ item }</MenuLink></Button> : null ))}
+                            { Array.from(Cat).map(item => ( item !== items[pathname].category ?  <Link to = {`/ogloszenia/${item}`}><Button category>{ item }</Button></Link> : null ))}
                         </Categories>
                     </CategoriesWrapper>
                 </ItemDetailSidebar>

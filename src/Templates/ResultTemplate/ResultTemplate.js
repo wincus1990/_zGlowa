@@ -33,6 +33,7 @@ function ResultTemplate({ match }) {
         item.category === pathname[1] 
             && (minPrice === '' ? true : (item.price >= minPrice))
             && (maxPrice === '' ? true : (item.price <= maxPrice))
+            && (item.sold !== true)
             && (localization === '' ? true : (item.localization === localization)) ? 
                 <ResultCard 
                     id = { item.id }

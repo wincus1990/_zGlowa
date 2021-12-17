@@ -6,7 +6,7 @@ import Button from "Components/atoms/Button/Button";
 import UserIcon from 'Assets/icons/userIcon.svg';
 import Stars from 'Assets/photos/stars.png';
 import { useDispatch } from 'react-redux';
-import { removeItem } from 'store/index.js';
+import { removeItem, toggleSold } from 'store/index.js';
 import { Redirect } from 'react-router-dom';
 import { CardWrapper, InformationWrapper, ItemName, ItemLocalization, ItemPrice } from './ResultCard.styles';
 
@@ -15,7 +15,7 @@ function ResultCard(props) {
     const dispatch = useDispatch();
     const [ redirectToResultTemplate, getRedirectToResultTemplate ] = useState(false)
     const [ redirectToUserProfileTemplate, getRedirectToUserProfileTemplate ] = useState(false)
-    const { id, img, name, description, user_name, localization, price, minWidth, margin, logged } = props;
+    const { id, img, name, description, user_name, localization, price, logged } = props;
 
     const handleShowMoreClick = () => {
         getRedirectToResultTemplate(true)
@@ -23,11 +23,15 @@ function ResultCard(props) {
     const handleShowUserProfile = () => {
         getRedirectToUserProfileTemplate(true)
     }
-    
+
     const handleRemoveItem = () => {
         dispatch(removeItem({ id: id }))
     }
-    
+
+    const setItemSold = (e) => {
+        dispatch(toggleSold({id: id}))
+    }
+
     if (redirectToResultTemplate) {
         return <Redirect to = { `/items/${id}` } />
     } else if (redirectToUserProfileTemplate) {
@@ -35,7 +39,7 @@ function ResultCard(props) {
     }
 
     return (
-        <CardWrapper style = {{ minWidth: minWidth, margin: margin }}> 
+        <CardWrapper> 
             <img src = { img } alt = { name }></img>
             <InformationWrapper>
                 <ItemName onClick = { handleShowMoreClick }> { name.toUpperCase() } </ItemName>
@@ -45,7 +49,7 @@ function ResultCard(props) {
                 <div onClick = { handleShowUserProfile }>
                     {logged ? <>
                         <Button userCard onClick = { handleRemoveItem }>USUŃ</Button>
-                        <Button userCard>ARCHIWUM</Button>
+                        <Button userCard onClick = { setItemSold } >ARCHIWUM</Button>
                     </> :
                     <>
                         <ButtonIcon icon = { UserIcon }/>

@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 `
 
 export const SearchbarContainer = styled.div`
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     
